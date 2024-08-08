@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        input, textarea {
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        input[type="radio"] {
+            margin-top: 0;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        .success {
+            color: green;
+            font-size: 16px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        input[type="submit"], input[type="reset"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="reset"] {
+            background-color: #f44336;
+        }
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <h2>Course Registration Form</h2>
+    <form id="registrationForm" method="post" action="#">
+        <label for="student_name">Student Name:</label>
+        <input type="text" id="student_name" name="student_name" placeholder="Enter your full name">
+        <span class="error" id="nameError"></span>
+
+        <label for="rollno">Roll No:</label>
+        <input type="text" id="rollno" name="rollno" placeholder="Enter your roll number">
+        <span class="error" id="rollnoError"></span>
+
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="Male"> Male
+        <input type="radio" id="female" name="gender" value="Female"> Female
+        <span class="error" id="genderError"></span>
+
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" placeholder="Enter your academic year (e.g., 2)">
+        <span class="error" id="yearError"></span>
+
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" placeholder="Enter your department">
+        <span class="error" id="departmentError"></span>
+
+        <label for="section">Section:</label>
+        <input type="text" id="section" name="section" placeholder="Enter your section (e.g., A)">
+        <span class="error" id="sectionError"></span>
+
+        <label for="mobile_no">Mobile No:</label>
+        <input type="text" id="mobile_no" name="mobile_no" placeholder="Enter your mobile number" pattern="^[6-9]\d{9}$">
+        <span class="error" id="mobileError"></span>
+
+        <label for="email">E-Mail ID:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address">
+        <span class="error" id="emailError"></span>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" cols="36" placeholder="Enter your address"></textarea>
+        <span class="error" id="addressError"></span>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" placeholder="Enter your city">
+        <span class="error" id="cityError"></span>
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" placeholder="Enter your country">
+        <span class="error" id="countryError"></span>
+
+        <label for="pincode">Pincode:</label>
+        <input type="text" id="pincode" name="pincode" placeholder="Enter your pincode" pattern="^\d{6}$">
+        <span class="error" id="pincodeError"></span>
+
+        <div class="form-actions">
+            <input type="submit" value="Submit Your Entries">
+            <input type="reset" value="Clear Your Entries">
+        </div>
+    </form>
+    <div class="success" id="successMessage"></div>
+
+    <script src="validation.js"></script>
+</body>
+</html>
